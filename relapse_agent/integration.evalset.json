@@ -1,0 +1,208 @@
+{
+  "eval_set_id": "relapse_screening_suite",
+  "eval_cases": [
+    {
+      "eval_id": "relapse_death_explicit",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "Le patient, âgé de 58 ans, est décédé le 12 mars des suites d'une rechute de sa leucémie myéloïde aiguë."
+              }
+            ]
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "ANSWER: YES"
+              }
+            ]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "name": "find_relapse_death_evidence",
+                "args": {}
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "eval_id": "death_other_cause_no_relapse",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "La paciente falleció a causa de una embolia pulmonar. No se observó ningún signo de recaída durante el último control."
+              }
+            ]
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "ANSWER: NO"
+              }
+            ]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "name": "find_relapse_death_evidence",
+                "args": {}
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "eval_id": "relapse_but_alive",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "The patient experienced a relapse in January. He is currently undergoing chemotherapy, and his condition is stable."
+              }
+            ]
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "ANSWER: NO"
+              }
+            ]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "name": "find_relapse_death_evidence",
+                "args": {}
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "eval_id": "death_cause_not_stated",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "Der Tod trat am 3. April zu Hause ein. Die Todesursache ist in den Unterlagen nicht angegeben."
+              }
+            ]
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "ANSWER: NO"
+              }
+            ]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "name": "find_relapse_death_evidence",
+                "args": {}
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "eval_id": "recurrence_synonym",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "Paziente deceduto in seguito a una recidiva tumorale epatica, nonostante una seconda linea di trattamento."
+              }
+            ]
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "ANSWER: YES"
+              }
+            ]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "name": "find_relapse_death_evidence",
+                "args": {}
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "eval_id": "negated_relapse",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "لم يتوفَّ المريض بسبب انتكاسة، بل جراء إصابته بالتهاب رئوي حاد أثناء وجوده في المستشفى."
+              }
+            ]
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "ANSWER: NO"
+              }
+            ]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "name": "find_relapse_death_evidence",
+                "args": {}
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "eval_id": "died_after_relapse_no_causal_link",
+      "conversation": [
+        {
+          "user_content": {
+            "parts": [
+              {
+                "text": "Le patient a rechuté en septembre et est décédé quelques semaines plus tard. Le certificat de décès ne mentionne pas de cause."
+              }
+            ]
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "ANSWER: NO"
+              }
+            ]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "name": "find_relapse_death_evidence",
+                "args": {}
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
