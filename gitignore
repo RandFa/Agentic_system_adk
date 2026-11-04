@@ -1,0 +1,10 @@
+# secrets
+.env
+*/.env
+
+# generated at run time
+relapse_sessions.db
+logger.log
+__pycache__/
+.ipynb_checkpoints/
+.venv/
